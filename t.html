@@ -6,10 +6,19 @@ $(document).ready(function()
 {
 	$("#t").click(function()
 	{
-		$('head').append('<link rel="stylesheet" href="t.css" type="text/css">');
+		//$('head').append('<link rel="stylesheet" href="t.css" type="text/css">');
 		$('head').append('<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.16/jquery-ui.min.js"></sc'+'ript>');
-		$.getScript('https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.16/jquery-ui.min.js');
-		$('button').button();
+		//$.getScript('https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.16/jquery-ui.min.js');
+		/*$.ajax({
+			url: 'https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.16/jquery-ui.min.js',
+			dataType: "script",
+			crossDomain: true,
+			success: function()
+			{
+				console.log("I got the script!");
+				$('button').button();
+			}
+		});*/
 	});
 });
 </script>

@@ -1,0 +1,79 @@
+<html>
+<head>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js"></script>
+	<script>
+	$(document).ready(function()
+	{
+		$("#editBtn, #editC").click(function()
+		{
+			$("#editWin").toggle();
+		});
+		$("#testBtn").click(function()
+		{
+			//var data = {"JS":$("#testJS").val(),"BODY":$("#testHTML").val()};
+			//var outData = $.param(data);
+			//$("#testFrame").attr('src','t.php?'+outData);
+			$("#js").val($("#testJS").val());
+			$("#jsf").val($("#testJSurl").val());
+			$("#body").val($("#testHTML").val());
+			$("#frm").submit();
+		});
+	});
+	</script>
+	<style>
+	#testFrame {
+		border-top-width: 0px;
+		border-right-width: 0px; 
+		border-bottom-width: 0px; 
+		border-left-width: 0px; 
+		border-style: initial; 
+		border-color: initial; 
+		/*z-index: 2147483647; */
+		position: fixed;
+		bottom: 0px; 
+		height: 90%; 
+		width: 100%;
+		left: 0px; 
+		visibility: visible; 
+	}
+	.veryTop {
+		z-index: 2147483647;
+	}
+	#editWin {
+		position: fixed;
+		top: 0px;
+		left: 0px;
+		height: 400px;
+		display: none;
+	}
+	#ifrmWrap {
+		background-color: white;
+		position: fixed;
+		width: 100%;
+		bottom: 0;
+		height: 90%;
+		left: 0;
+	}
+	body {
+		background: #CCC;
+	}
+	</style>
+</head>
+<body>
+<div id='editWin' class='veryTop'>
+<textarea id="testHTML" cols="60" rows="20"></textarea>
+<textarea id="testJS" cols="20" rows="10"></textarea>
+<textarea id="testJSurl" cols="20" rows="10"></textarea>
+<button id='testBtn'>TEST</button><button id='editC'>Close</button>
+</div>
+<button id='editBtn'>Edit</button>
+<div id="ifrmWrap">
+<iframe src="about:blank" name="frmPreview" id="testFrame" frameborder="0"></iframe>
+</div>
+<form id="frm" style="display: none;" target="frmPreview" method="post" action="t.php">
+<textarea id="js" name="js"></textarea>
+<textarea id="jsf" name="jsf"></textarea>
+<textarea id="body" name="body"></textarea>
+</form>
+</body>
+</html>

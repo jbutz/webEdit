@@ -4,15 +4,19 @@
 	<script>
 	$(document).ready(function()
 	{
-		var iFrameDoc = $("#testFrame")[0].contentWindow.document; // contentWindow works in IE7 and FF
-		iFrameDoc.open(); iFrameDoc.close(); // must open and close document object to start using it!
-		$("body", iFrameDoc).css("background","white");
+			var iFrameDoc = $("#testFrame")[0].contentWindow.document; // contentWindow works in IE7 and FF
+			//var val = '<scr' + 'ipt type="text/javascript" src="http://jqueryjs.googlecode.com/files/jquery-1.3.2.min.js"></scr' + 'ipt>';
+			//val += '<scr' + 'ipt type="text/javascript">'+$('#testJS').val()+'</scr' + 'ipt>';
+			iFrameDoc.open();
+			//iFrameDoc.write(val);
+			iFrameDoc.close(); // must open and close document object to start using it!
+		//$("body", iFrameDoc).css("background","white");
 		$('#testBtn').click(function()
 		{
 			console.log($("#testHTML").val(),"Updating HTML");
-			$("head", iFrameDoc).append("<script>"+$('#testJS').val()+"</scr"+"ipt>")
+			//$("head", iFrameDoc).append("<script src='https://ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js'></scr"+"ipt>")
+			//$("head", iFrameDoc).append("<script>"+$('#testJS').val()+"</scr"+"ipt>")
 			$("body", iFrameDoc).html($("#testHTML").val());
-			
 		});
 		
 		$('#editBtn, #editC').click(function()
