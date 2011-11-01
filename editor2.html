@@ -1,0 +1,56 @@
+<!doctype html>
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js"></script>
+<script src="google-code-prettify/distrib/google-code-prettify/prettify.js"></script>
+<link href="google-code-prettify/distrib/google-code-prettify/prettify.css" rel="stylesheet" />
+
+<style type="text/css">
+#codeTextarea{
+	width:500px;
+	height:510px;
+}
+.textAreaWithLines{
+	font-family:courier;      
+	border:1px solid #F00;
+
+}
+.textAreaWithLines textarea,.textAreaWithLines div{
+	border:0px;
+	line-height:120%;
+	font-size:12px;
+}
+.lineObj{
+	color:red;
+}
+.editor div.ln {
+}
+.editor .txt {
+	width: 500px;
+	height: 700px;
+	border: 1px solid black;
+	overflow: scroll;
+}
+</style>
+
+<script type="text/javascript">
+	$(function()
+	{
+		$(".prettyprint").keypress(function()
+		{
+			prettyPrint();
+		});
+	});
+function positionLineObj(obj,ta)
+{
+	obj.style.top = (ta.scrollTop * -1 + lineObjOffsetTop) + 'px';   
+}
+</script>
+</head>
+<body onload="prettyPrint()">
+<div class="editor">
+<div class="ln"></div>
+<pre class="txt prettyprint" designMode="on" contentEditable></pre>
+</div>
+</body>
+</html>

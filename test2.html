@@ -1,12 +1,24 @@
 <html>
 <head>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.16/jquery-ui.min.js"></script>
+	<script src="codemirror-compressed.js"></script>
+	<link rel="stylesheet" href="smoothness/jquery-ui-1.8.16.custom.css" />
+	<link rel="stylesheet" href="codemirror.css" />
 	<script>
 	$(document).ready(function()
 	{
 		$("#editBtn, #editC").click(function()
 		{
-			$("#editWin").toggle();
+			//if($("#editWin").dialog("isOpen"))
+			//	$("#editWin").dialog("close");
+			//else
+			//	$("#editWin").dialog("open");
+			$("#editWin").slideToggle("slow");
+		});
+		$("#showFrame").click(function()
+		{
+			$("#ifrmWrap").slideToggle("slow");
 		});
 		$("#testBtn").click(function()
 		{
@@ -18,6 +30,20 @@
 			$("#body").val($("#testHTML").val());
 			$("#frm").submit();
 		});
+		$("div.accordion").accordion({
+			fillSpace: true,
+			collapsible: true,
+			active: 3
+		});
+		var myCodeMirror = CodeMirror.fromTextArea(document.getElementById("testHTML"), {
+			mode: "html",
+			theme: "default",
+			lineNumbers: true
+		});
+		//$("#editWin").dialog({
+		//	autoOpen: false,
+		//	width: 600
+		//});
 	});
 	</script>
 	<style>
@@ -30,8 +56,10 @@
 		border-color: initial; 
 		/*z-index: 2147483647; */
 		position: fixed;
-		bottom: 0px; 
-		height: 90%; 
+		top: 100px;
+		height: 100%;
+		/*bottom: 0px; 
+		height: 90%; */
 		width: 100%;
 		left: 0px; 
 		visibility: visible; 
@@ -41,18 +69,25 @@
 	}
 	#editWin {
 		position: fixed;
-		top: 0px;
+		top: 100px;
 		left: 0px;
-		height: 400px;
 		display: none;
+		width: 100%;
+		/*height: 100%;*/
+		background-color: white;
+		border: 1px solid black;
 	}
 	#ifrmWrap {
 		background-color: white;
 		position: fixed;
 		width: 100%;
-		bottom: 0;
-		height: 90%;
+		top: 100px;
+		height: 100%;
 		left: 0;
+		display: none;
+	}
+	.accordion div textarea {
+		display: inherit;
 	}
 	body {
 		background: #CCC;
@@ -61,12 +96,30 @@
 </head>
 <body>
 <div id='editWin' class='veryTop'>
-<textarea id="testHTML" cols="60" rows="20"></textarea>
-<textarea id="testJS" cols="20" rows="10"></textarea>
-<textarea id="testJSurl" cols="20" rows="10"></textarea>
-<button id='testBtn'>TEST</button><button id='editC'>Close</button>
+	<button id='testBtn'>TEST</button><button id='editC'>Close</button>
+	<div class="accordion">
+		<h3><a href="#">JS Includes</a></h3>
+			<div>
+				<textarea id="testJSurl" cols="20" rows="10"></textarea>
+			</div>
+		<h3><a href="#">JS Script</a></h3>
+			<div>
+				<textarea id="testJS" cols="20" rows="10"></textarea>
+			</div>
+		<h3><a href="#">CSS Links</a></h3>
+			<div>
+			</div>
+		<h3><a href="#">CSS Style</a></h3>
+			<div>
+			</div>
+		<h3><a href="#">HTML</a></h3>
+			<div>
+				<textarea id="testHTML"></textarea>
+			</div>
+	</div>
 </div>
 <button id='editBtn'>Edit</button>
+<button id='showFrame'>Show Preview</button>
 <div id="ifrmWrap">
 <iframe src="about:blank" name="frmPreview" id="testFrame" frameborder="0"></iframe>
 </div>
