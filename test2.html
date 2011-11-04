@@ -4,7 +4,16 @@
 	<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.16/jquery-ui.min.js"></script>
 	<script src="codemirror-compressed.js"></script>
 	<link rel="stylesheet" href="smoothness/jquery-ui-1.8.16.custom.css" />
-	<link rel="stylesheet" href="codemirror.css" />
+	<!-- ------------------------- -->
+	<link rel="stylesheet" href="cm/codemirror.css" />
+	<script src="cm/codemirror.js"></script>
+	<script src="cm/xml.js"></script>
+	<script src="cm/javascript.js"></script>
+	<script src="cm/css.js"></script>
+	<script src="cm/htmlmixed.js"></script>
+	<link rel="stylesheet" href="cm/default.css" />
+	<style>.CodeMirror {border: 1px solid black;}</style>
+	<!-- ------------------------- -->
 	<script>
 	$(document).ready(function()
 	{
@@ -35,15 +44,17 @@
 			collapsible: true,
 			active: 3
 		});
-		var myCodeMirror = CodeMirror.fromTextArea(document.getElementById("testHTML"), {
-			mode: "html",
-			theme: "default",
-			lineNumbers: true
-		});
 		//$("#editWin").dialog({
 		//	autoOpen: false,
 		//	width: 600
 		//});
+		var editor = CodeMirror.fromTextArea(document.getElementById("testHTML"),{
+			mode: "text/html",
+			tabMode: "indent",
+			lineNumbers: true,
+			value: "\n",
+			firstLineNumber: 1
+		});
 	});
 	</script>
 	<style>
@@ -92,6 +103,9 @@
 	body {
 		background: #CCC;
 	}
+	.CodeMirror-scroll {
+		height: 200px;
+	}
 	</style>
 </head>
 <body>
@@ -114,7 +128,9 @@
 			</div>
 		<h3><a href="#">HTML</a></h3>
 			<div>
+				<form>
 				<textarea id="testHTML"></textarea>
+				</form>
 			</div>
 	</div>
 </div>

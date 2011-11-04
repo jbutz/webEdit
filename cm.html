@@ -1,14 +1,33 @@
 <html>
 <head>
-	<script src="codemirror-compressed.js"></script>
-	<link src="codemirror.css" rel="stylesheet" />
-	<script>
-		CodeMirror.fromTextArea(document.getElementById("testHTML"),{
-			mode: "text/html"
-		});
-	</script>
+	<link rel="stylesheet" href="cm/codemirror.css" />
+	<script src="cm/codemirror.js"></script>
+	<script src="cm/xml.js"></script>
+	<script src="cm/javascript.js"></script>
+	<script src="cm/css.js"></script>
+	<script src="cm/htmlmixed.js"></script>
+	<link rel="stylesheet" href="cm/default.css" />
+	<style>.CodeMirror {border-top: 1px solid black; border-bottom: 1px solid black;}</style>
 </head>
 <body>
-<textarea id="testHTML"></textarea>
+<form>
+<textarea id="code" name="code">
+<html>
+<head>
+</head>
+<body>
+<p>Hi There!</p>
+</body>
+</html>
+</textarea>
+</form>
+	<script>
+		var editor = CodeMirror.fromTextArea(document.getElementById("code"),{
+			mode: "text/html",
+			tabMode: "indent",
+			lineNumbers: true
+		});
+	</script>
+	<button onClick="console.log(editor.getValue())">Content</button>
 </body>
 </html>

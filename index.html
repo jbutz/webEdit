@@ -1,0 +1,67 @@
+<!doctype html>
+<html>
+<head>
+	<link rel="stylesheet" href="smoothness/jquery-ui-1.8.16.custom.css" />
+	<script data-main="js/main" src="js/require.js"></script>
+	<style>
+		body {
+			padding: 0px;
+			margin: 0px;
+			background-color: black;
+			color: white;
+		}
+		.menubar {
+			padding: 0;
+			margin: 0;
+		}
+		.menubar ul {
+			list-style-type: none;
+			height: 40px;
+			padding: 0;
+			margin: 0;
+		}
+		.menubar ul li a:hover {
+			color: #000;
+		}
+		.menubar ul li a {
+			float: left;
+			padding-right: 32px;
+			padding-left: 32px;
+			display: block;
+			line-height: 40px;
+			text-decoration: none;
+			font-family: Georgia, "Times New Roman", Times, serif;
+			font-size: 21px;
+			color: #371C1C;
+			border-right: 1px solid black;
+		}
+		.menubar ul li.logo {
+			float: left;
+			padding-right: 32px;
+			padding-left: 32px;
+			display: block;
+			line-height: 40px;
+			text-decoration: none;
+			font-family: Georgia, "Times New Roman", Times, serif;
+			font-size: 21px;
+			color: #371C1C;
+			border-right: 1px solid black;
+		}
+	</style>
+</head>
+<body>
+<div id="topbar" class='menubar'>
+	<ul class=''>
+		<li class=''>Site Name</li>
+		<li><a href="#">JavaScript</a></li>
+		<li><a href="#">CSS</a></li>
+		<li><a href="#">HTML Body</a></li>
+		<li><a href="#">Preview</a></li>
+		<li class='menuLast'><a href="#">Save</a></li>
+	</ul>
+</div>
+<form id='tempForm' style='display: none;'>
+
+</form>
+</body>
+</html>
