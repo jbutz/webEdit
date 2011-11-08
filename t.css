@@ -2,3 +2,12 @@ button {
 	width: 300px;
 	background-color: #00FF00;
 }
+.ui-headerBar-header {
+	height: 40px;
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+
+}
+.ui-headerBar-logo {
+}

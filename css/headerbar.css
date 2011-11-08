@@ -1,0 +1,25 @@
+.ui-headerBar-item a:hover {
+	color: #888;
+}
+.ui-headerBar-item a {
+	text-decoration: none;
+}
+.ui-headerBar-item {
+	float: left;
+	padding-right: 32px;
+	padding-left: 32px;
+	display: block;
+	line-height: 40px;
+	font-family: Georgia, "Times New Roman", Times, serif;
+	font-size: 21px;
+	color: #371C1C;
+	border-right: 1px solid black;
+}
+.ui-headerBar-logo {
+}
+.ui-headerBar-header {
+	height: 40px;
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+}  
