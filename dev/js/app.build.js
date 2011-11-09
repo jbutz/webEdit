@@ -1,7 +1,7 @@
 ({
 	appDir:	"../",
 	baseUrl:	"js",
-	dir:		"../../dev",
+	dir:		"../../prod",
 	paths:	{
 		jQuery:"jquery/jquery.load",
 		CodeMirror:"cm/cm.load"
