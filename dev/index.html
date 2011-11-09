@@ -11,21 +11,22 @@
 			background-color: black;
 			color: white;
 		}
+		div.tabDiv {
+			height: 600px;
+			background: #C8C8C8;
+		}
 	</style>
 </head>
 <body>
 <div id="topbar" class='menubar'>
-	<ul class=''>
-		<li class=''>Site Name</li>
-		<li><a href="#">JavaScript</a></li>
-		<li><a href="#">CSS</a></li>
-		<li><a href="#">HTML Body</a></li>
-		<li><a href="#">Preview</a></li>
-		<li class='menuLast'><a href="#">Save</a></li>
+	<ul class='ui-widget-header ui-headerBar-header'>
+		<li class='ui-headerBar-item ui-headerBar-logo'>Site Name</li>
+		<li class='ui-headerBar-item'><a href="#" id='lnkJS'>JavaScript</a></li>
+		<li class='ui-headerBar-item'><a href="#" id='lnkCSS'>CSS</a></li>
+		<li class='ui-headerBar-item'><a href="#" id='lnkBody'>HTML Body</a></li>
+		<li class='ui-headerBar-item'><a href="#" id='lnkPreview'>Preview</a></li>
+		<li  class='ui-headerBar-item ui-headerBar-item-last'><a href="#" id='lnkSave'>Save</a></li>
 	</ul>
 </div>
-<form id='tempForm' style='display: none;'>
-
-</form>
 </body>
 </html>

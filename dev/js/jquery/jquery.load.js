@@ -1,7 +1,6 @@
 define([
 	'order!jquery/jquery',
-	'order!jquery/jquery-ui',
-	'order!jquery/ui.widget'],
+	'order!jquery/jquery-ui'],
 	function()
 	{
 		return jQuery;
