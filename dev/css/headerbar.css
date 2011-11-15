@@ -23,3 +23,7 @@
 	margin: 0;
 	padding: 0;
 }  
+li.ui-active, li.ui-active a {
+	color: #888;
+	font-weight: bold;
+}
