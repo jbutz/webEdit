@@ -106,7 +106,6 @@ define([
 
 			$('body').bind('loadPreview',function()
 			{
-				console.log("FIRE");
 				$('#ifrmForm textarea[name="cssCode"]').val(window.cmtxt.CSS.getValue());
 				$('#ifrmForm textarea[name="jsCode"]').val(window.cmtxt.JS.getValue());
 				$('#ifrmForm textarea[name="htmlCode"]').val(window.cmtxt.Body.getValue());

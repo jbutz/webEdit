@@ -5,6 +5,7 @@ require.config({
 	}
 });
 require([
+	//'modernizr',
 	'app'	
 	],
 	function(app)
